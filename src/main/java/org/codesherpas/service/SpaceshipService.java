@@ -31,7 +31,7 @@ public class SpaceshipService {
     public int shoot(Spaceship shootingSpaceshipId, Spaceship defendingSpaceshipId) {
         if (shootingSpaceshipId.getHealth() == 0) {
             System.out.println("Spaceship unable to shoot!");
-            return shootingSpaceshipId.getHealth();
+            return defendingSpaceshipId.getHealth();
         } else if (shootingSpaceshipId.getId() == defendingSpaceshipId.getId()) {
             System.out.println("Spaceship cannot shoot at itself!");
             return shootingSpaceshipId.getHealth();
