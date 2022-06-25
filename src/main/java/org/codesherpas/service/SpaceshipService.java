@@ -28,4 +28,23 @@ public class SpaceshipService {
         return null;
     }
 
-}
+    public int shoot(Spaceship shootingSpaceshipId, Spaceship defendingSpaceshipId) {
+        if (shootingSpaceshipId.getHealth() == 0) {
+            System.out.println("Spaceship unable to shoot!");
+            return shootingSpaceshipId.getHealth();
+        } else if (shootingSpaceshipId.getId() == defendingSpaceshipId.getId()) {
+            System.out.println("Spaceship cannot shoot at itself!");
+            return shootingSpaceshipId.getHealth();
+        } else {
+            System.out.println("Spaceship with id:" +
+                    shootingSpaceshipId.getId() +
+                    " shooting at spaceship with id:" + defendingSpaceshipId.getId());
+            defendingSpaceshipId.decreaseHealth();
+            return defendingSpaceshipId.getHealth();
+        }
+
+
+
+    }
+
+    }
