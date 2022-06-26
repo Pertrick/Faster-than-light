@@ -1,29 +1,24 @@
 package org.codesherpas;
 
 import org.codesherpas.service.SpaceshipService;
+import org.codesherpas.weapon.PiercingWeapon;
 import org.codesherpas.weapon.ShootingWeapon;
+import org.codesherpas.weapon.Weapon;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 
-public class Feature5Test {
+public class Feature6Test {
 
     Spaceship spaceship1 = new Spaceship(1);
     Spaceship spaceship2 = new Spaceship(2);
 
     @Test
-    public void destroyedShipShouldNotShoot(){
-        spaceship1.setHealth(0);
+    public void useWeapon(){
         spaceship2.setHealth(5);
-        SpaceshipService spaceshipService = new SpaceshipService();
-
-        //assertEquals(spaceshipService.shoot(spaceship1, spaceship2), spaceship2.getHealth());
-
         spaceship1.setWeapon(new ShootingWeapon());
 
-        assertEquals(spaceship1.getWeapon().useWeapon(spaceship1, spaceship2), 5);
+        assertEquals(spaceship1.getWeapon().useWeapon(spaceship1, spaceship2), 4);
 
     }
-
-
 }

@@ -1,6 +1,8 @@
 package org.codesherpas.service;
 
 import org.codesherpas.Spaceship;
+import org.codesherpas.weapon.ShootingWeapon;
+import org.codesherpas.weapon.Weapon;
 
 import java.util.ArrayList;
 import java.util.Collections;
@@ -26,25 +28,6 @@ public class SpaceshipService {
             }
         }
         return null;
-    }
-
-    public int shoot(Spaceship shootingSpaceshipId, Spaceship defendingSpaceshipId) {
-        if (shootingSpaceshipId.getHealth() == 0) {
-            System.out.println("Spaceship unable to shoot!");
-            return defendingSpaceshipId.getHealth();
-        } else if (shootingSpaceshipId.getId() == defendingSpaceshipId.getId()) {
-            System.out.println("Spaceship cannot shoot at itself!");
-            return shootingSpaceshipId.getHealth();
-        } else {
-            System.out.println("Spaceship with id:" +
-                    shootingSpaceshipId.getId() +
-                    " shooting at spaceship with id:" + defendingSpaceshipId.getId());
-            defendingSpaceshipId.decreaseHealth();
-            return defendingSpaceshipId.getHealth();
-        }
-
-
-
     }
 
     }

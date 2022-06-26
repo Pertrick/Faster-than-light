@@ -1,6 +1,7 @@
 package org.codesherpas;
 
 import org.codesherpas.service.SpaceshipService;
+import org.codesherpas.weapon.ShootingWeapon;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
@@ -15,7 +16,10 @@ public class Feature3Test {
         public void shoot(){
             SpaceshipService spaceshipService = new SpaceshipService();
 
-            assertEquals( spaceshipService.shoot(spaceship1, spaceship2), 4);
+//            assertEquals( spaceshipService.shoot(spaceship1, spaceship2), 4);
+
+                spaceship1.setWeapon(new ShootingWeapon());
+                assertEquals(spaceship1.getWeapon().useWeapon(spaceship1, spaceship2), 4);
 
         }
 
